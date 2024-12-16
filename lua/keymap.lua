@@ -12,6 +12,12 @@ km.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q
 -- CMD-s is save in normal and insert modes
 km.set({ 'n', 'i' }, '<D-s>', '<cmd>w<CR>')
 
+-- execute lua code
+km.set('n', '<leader><leader>x', '<cmd>source %<CR>') -- current buffer
+km.set('n', '<leader>x', ':.lua<CR>') -- current line in normal mode
+km.set('v', '<leader>x', ':lua<CR>') -- current line in visual mode
+
+--
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
